@@ -1,4 +1,4 @@
-@prefix ex: <http://example.org/masters/ev#> .
+@prefix ex: <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -102,3 +102,4 @@ ex:passed a rdf:Property ;
     rdfs:domain ex:Grade ;
     rdfs:range xsd:boolean ;
     rdfs:label "Validé"@fr .
+

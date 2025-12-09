@@ -3,7 +3,7 @@
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix exam: <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab#> .
+@prefix ex: <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab#> .
 
 <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab>
 
@@ -113,6 +113,7 @@ ex:passed a rdf:Property ;
     rdfs:domain ex:Grade ;
     rdfs:range xsd:boolean ;
     rdfs:label "Validé"@fr .
+
 
 
 

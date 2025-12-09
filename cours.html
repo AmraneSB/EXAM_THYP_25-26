@@ -92,6 +92,16 @@
         });
     }
 
+    //  Filtrer la liste des cours
+    function filterCours() {
+        const filterValue = document.querySelector("#filterInput").value.toLowerCase();
+        const filtered = getCours().filter(c =>
+            c.id.toLowerCase().includes(filterValue) ||
+            c.titre.toLowerCase().includes(filterValue)
+        );
+        showCours(filtered);
+    }
+    
 
     // Initialisation de la page
     document.addEventListener("DOMContentLoaded", () => {
@@ -101,3 +111,4 @@
 
 </body>
 </html>
+

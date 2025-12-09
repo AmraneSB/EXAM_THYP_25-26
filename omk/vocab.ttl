@@ -1,9 +1,19 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix exam: <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://github.com/AmraneSB/EXAM_THYP_25-26/omk/vocab>
+
+    a owl:Ontology ;
+    rdfs:label "Vocabulaire exam"@fr ;
+    dcterms:creator "AmraneSB"@fr ;
+    dcterms:description "Vocabulaire RDF/Turtle du projet exam."@fr ;
+    dcterms:issued "2025-12-09"^^xsd:date ;
+    owl:versionInfo "1.0" .
+
 
 ########## CLASSES ##########
 	ex:Student a rdfs:Class ;

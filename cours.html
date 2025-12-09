@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des cours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            padding: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 360px) {
+            table, th, td {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Liste des cours</h1>
+
+<input type="text" id="filterInput" placeholder="Filtrer par titre ou identifiant..." oninput="filterCours()">
+
+<table id="coursTable">
+    <thead>
+        <tr>
+            <th>Identifiant</th>
+            <th>Titre</th>
+            <th>Étudiants inscrits</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
+
+<script>
+    
+    const coursData = [
+        {id: "CS101", titre: "Fondamentaux du Web", etudiants: ["Alice Martin", "Bob Dupont"]},
+        {id: "CS102", titre: "Programmation avancée", etudiants: ["Charlie Durand", "Alice Martin"]},
+        {id: "CS103", titre: "Base de données", etudiants: ["David Petit", "Eve Lemoine"]}
+    ];
+
+    //  Récupérer la liste des cours
+    function getCours() {
+        return coursData;
+    }
+
+    // Afficher la liste des cours
+    function showCours(cours) {
+        const tbody = document.querySelector("#coursTable tbody");
+        tbody.innerHTML = ""; 
+
+        cours.forEach(c => {
+            const tr = document.createElement("tr");
+            const etudiants = c.etudiants.join(", ");
+            tr.innerHTML = `
+                <td>${c.id}</td>
+                <td>${c.titre}</td>
+                <td>${etudiants}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+
+    // Initialisation de la page
+    document.addEventListener("DOMContentLoaded", () => {
+        showCours(getCours());
+    });
+</script>
+
+</body>
+</html>

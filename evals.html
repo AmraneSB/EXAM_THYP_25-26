@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Évaluations des étudiants</title>
+<style>
+body { font-family: Arial, sans-serif; margin:20px; }
+h1 { text-align:center; }
+table { width:100%; border-collapse:collapse; margin-top:20px; }
+th, td { border:1px solid #ccc; padding:8px; }
+th { background:#f2f2f2; }
+input, button { padding:6px; margin:4px; }
+@media(max-width:768px){ table, th, td { font-size:14px; } }
+@media(max-width:360px){ table, th, td { font-size:12px; } }
+</style>
+</head>
+<body>
+
+<h1>Évaluations des étudiants</h1>
+
+<div>
+<h3>Ajouter une évaluation</h3>
+<label>ID Évaluation: <input type="text" id="evalId"></label>
+<label>Étudiant: <input type="text" id="studentName"></label>
+<label>Cours: <input type="text" id="courseId"></label>
+<label>Note: <input type="number" id="score" min="0" max="20"></label>
+<button onclick="setEval()">Enregistrer</button>
+</div>
+
+<table id="evalTable">
+<thead>
+<tr>
+<th>ID Éval</th>
+<th>Étudiant</th>
+<th>Cours</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+
+</tbody>
+</table>
+
+<script>
+// Données initiales 
+let evalsData = [
+    {id: "E001", student: "Alice Martin", course: "CS101", score: 15},
+    {id: "E002", student: "Bob Dupont", course: "CS101", score: 12},
+    {id: "E003", student: "Charlie Durand", course: "CS102", score: 17}
+];
+
+//  Ajouter une évaluation
+function setEval() {
+    const id = document.querySelector("#evalId").value.trim();
+    const student = document.querySelector("#studentName").value.trim();
+    const course = document.querySelector("#courseId").value.trim();
+    const score = parseFloat(document.querySelector("#score").value);
+
+    if(!id || !student || !course || isNaN(score)) {
+        alert("Veuillez remplir tous les champs correctement.");
+        return;
+    }
+
+    evalsData.push({id, student, course, score});
+    showEval();
+
+    // Reset des champs
+    document.querySelector("#evalId").value = "";
+    document.querySelector("#studentName").value = "";
+    document.querySelector("#courseId").value = "";
+    document.querySelector("#score").value = "";
+}
+
+// Afficher les évaluations
+function showEval() {
+    const tbody = document.querySelector("#evalTable tbody");
+    tbody.innerHTML = "";
+    evalsData.forEach(e => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${e.id}</td>
+            <td>${e.student}</td>
+            <td>${e.course}</td>
+            <td>${e.score}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// Initialisation
+document.addEventListener("DOMContentLoaded", showEval);
+</script>
+
+</body>
+</html>

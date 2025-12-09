@@ -1,0 +1,47 @@
+{
+    "o:label": "Note",
+    "o:resource_template_property": [
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/github.com\/AmraneSB\/EXAM_THYP_25-26\/omk\/vocab#",
+            "vocabulary_label": "Vocabulaire exam",
+            "local_name": "score",
+            "label": "Score"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/github.com\/AmraneSB\/EXAM_THYP_25-26\/omk\/vocab#",
+            "vocabulary_label": "Vocabulaire exam",
+            "local_name": "forAssessment",
+            "label": "Note pour l'\u00e9valuation"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/github.com\/AmraneSB\/EXAM_THYP_25-26\/omk\/vocab#",
+            "vocabulary_label": "Vocabulaire exam",
+            "local_name": "passed",
+            "label": "Valid\u00e9"
+        }
+    ],
+    "o:resource_class": {
+        "vocabulary_namespace_uri": "https:\/\/github.com\/AmraneSB\/EXAM_THYP_25-26\/omk\/vocab#",
+        "vocabulary_label": "Vocabulaire exam",
+        "local_name": "Grade",
+        "label": "Note"
+    }
+}
